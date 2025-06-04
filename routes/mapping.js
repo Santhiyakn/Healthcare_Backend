@@ -9,7 +9,7 @@ const { assignDoctor,
     getAllMappings,
     getMappingsByPatientId,
     deleteMapping } = mappingInfo;
-
+    
 const router = express.Router();
 
 router.post('/', authenticateUser, assignDoctor);

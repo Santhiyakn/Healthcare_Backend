@@ -1,7 +1,9 @@
 import express from 'express';
-import { authenticateUser } from '../middleware/authmiddleware.js';
 import doctorInfo from '../controllers/doctorcontroller.js';
+import authenticate  from '../middleware/authmiddleware.js';
 
+
+const {authenticateUser} = authenticate;
 
 const {
     addDoctor,

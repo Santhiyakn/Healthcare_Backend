@@ -2,8 +2,7 @@ import jsonwebtoken from 'jsonwebtoken';
 const { verify } = jsonwebtoken;
 import User from '../models/user.js';
 // import {tokenblacklist} from '../services/authservices.js'
-
-export const authenticateUser = async(req,res,next)=>{
+const authenticateUser = async(req,res,next)=>{
    try {
         const token = req.header('Authorization');
         if (!token) {
@@ -40,3 +39,7 @@ export const authenticateUser = async(req,res,next)=>{
     }
 
 }
+
+const authenticate = {authenticateUser};
+
+export default authenticate;

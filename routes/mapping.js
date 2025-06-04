@@ -1,12 +1,15 @@
 import express from 'express';
 import mappingInfo from '../controllers/mappingController.js';
-import { authenticateUser } from '../middleware/authmiddleware.js';
+import authenticate  from '../middleware/authmiddleware.js';
+
+
+const {authenticateUser} = authenticate;
 
 const { assignDoctor,
     getAllMappings,
     getMappingsByPatientId,
     deleteMapping } = mappingInfo;
-    
+
 const router = express.Router();
 
 router.post('/', authenticateUser, assignDoctor);

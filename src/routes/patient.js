@@ -15,8 +15,8 @@ const {
 const router = express.Router();
 
 router.post('/', authenticateUser, addPatient);
-router.get('/:id', authenticateUser, getPatientById);
 router.get('/', authenticateUser, getAllPatients);
+router.get('/:id', authenticateUser, getPatientById);
 router.put('/:id', authenticateUser, updatePatient);
 router.delete('/:id', authenticateUser, deletePatient);
 
